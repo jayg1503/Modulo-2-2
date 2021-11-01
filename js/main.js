@@ -8,9 +8,11 @@ $(document).ready(()=>{
     tempF()
     maxMin()
     exponencial()
+    conteo()
     delayedAlert()
     slowAlert()
     clearAlert()
+    
 })
 
 var numberOne = 25;
@@ -96,39 +98,45 @@ function exponencial() {
     console.log("El valor de la base ", base,  " a la potencia ", expo, " es: ", potencia);
 }
 
-var country = prompt("BIENVENIDO!!! INGRESA UN NUMERO", "El valor debe ser mayor a 0");
-parseInt(country)
-if (country>0) {
-        for (let i = 0; i < country; i++) {
-        var country1 = prompt("ingresa nombre de pais", i+1)
-        //document.write(country1)
-        var qty=0
-        qty = country1.length
-        //document.write(qty)
-        var table = [country1,qty]
-        document.write(table)          
-    }
-}
-else {
-    if (country = String) {
-        alert("debes ingresar un numero mayor a 0")
-        var country = prompt("BIENVENIDO!!! INGRESA UN NUMERO", "El valor debe ser mayor a 0");
-        parseInt(country)
-        if (country>0) {
+function conteo() {
+    var country = prompt("BIENVENIDO!!! INGRESA UN NUMERO", "El valor debe ser mayor a 0");
+    parseInt(country)
+    if (country>0) {
             for (let i = 0; i < country; i++) {
-            var country1 = prompt("ingresa nombre de pais", i+1)
-            //document.write(country1)
+            var country1 = prompt("ingresa nombre de pais:", i+1)
             var qty=0
             qty = country1.length
-            //document.write(qty)
-            var table = [country1,qty]
-            document.write(table)          
+            var container = document.createElement("div")
+            container.classList.add("test")
+            //var espacio = document.createElement("br")
+            var table = document.createTextNode("El pais con nombre: \""+ country1+ "\" tiene " + qty+ " letras")
+            container.appendChild(table)
+            document.body.appendChild(container)
+            //document.body.appendChild(espacio) 
+        }
+    }
+    else {
+        if (country = String) {
+            alert("debes ingresar un numero mayor a 0")
+            var country = prompt("BIENVENIDO NUEVAMENTE, INGRESA UN ######", "El valor debe ser mayor a Zero (0)");
+            parseInt(country)
+            if (country>0) {
+                for (let i = 0; i < country; i++) {
+                var country1 = prompt("Ingresa nombre de pais::", i+1)
+                var qty=0
+                qty = country1.length
+                var table = [country1,qty]
+                document.write(table)
+                //var container = document.createElement("div")
+                //container.appendChild(table)
+                        
+                }
             }
         }
     }
-}
-if (country<0) {
-    alert("debes ingresar un numero mayor a 0")
+    if (country<0) {
+        alert("debes ingresar un numero mayor a Cero")
+    }
 }
 
 var timeoutID

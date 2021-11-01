@@ -1,0 +1,23 @@
+*{
+    padding: 10px 10px;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main {
+    background: black;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    width: auto;
+
+}
+
+.test {
+    background-color: #5151a7;
+    border: solid 1px orangered;
+    border-radius: 3px;
+    width: 400px;
+    margin-bottom: 20px;
+
+}
